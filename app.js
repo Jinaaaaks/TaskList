@@ -26,12 +26,18 @@ function render() {
   `).join("");
 }
 
+function save() {
+  localStorage.setItem(KEY, JSON.stringify(tasks));
+}
+
+
 if (form) {
   form.addEventListener("submit", e => {
     e.preventDefault();
     const title = input.value.trim();
     if (!title) return;
     tasks.push({ id: crypto.randomUUID(), title, done: false });
+    save();
     input.value = "";
     render();
   });
@@ -55,5 +61,6 @@ if (list) {
     }
   });
 }
+
 
 render();
