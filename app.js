@@ -7,8 +7,14 @@ const form = document.getElementById("taskForm");
 const input = document.getElementById("taskInput");
 const list = document.getElementById("taskList");
 
-// in-memory tasks for now
-let tasks = []; // { id, title, done }
+const KEY = "tasklist-v1";
+let tasks = [];
+try {
+  tasks = JSON.parse(localStorage.getItem(KEY)) || [];
+} catch {
+  tasks = [];
+}
+
 
 function render() {
   list.innerHTML = tasks.map(t => `
