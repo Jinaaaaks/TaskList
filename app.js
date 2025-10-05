@@ -35,6 +35,11 @@ function render() {
     return matchText && matchStatus;
   });
 
+  if (filtered.length === 0) {
+    list.innerHTML = `<li class="empty">No tasks. Add one, or change filters.</li>`;
+    return;
+  }
+
   list.innerHTML = filtered.map(t => `
     <li data-id="${t.id}" class="${t.done ? "done" : ""}">
       <input type="checkbox" ${t.done ? "checked" : ""}>

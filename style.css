@@ -112,4 +112,12 @@ form { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
   border-color: #fca5a5;
 }
 
+#taskList li.empty {
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+  border-style: dashed;
+}
+
+
 input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent); }
