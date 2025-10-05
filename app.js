@@ -18,6 +18,8 @@ try {
 const search = document.getElementById("searchInput");
 let query = "";
 
+const clearBtn = document.getElementById("clearDone");
+
 
 function render() {
     const filtered = tasks.filter(t => t.title.toLowerCase().includes(query));
@@ -75,6 +77,12 @@ if (search) {
   });
 }
 
-
+if (clearBtn) {
+  clearBtn.addEventListener("click", () => {
+    tasks = tasks.filter(t => !t.done);
+    save();
+    render();
+  });
+}
 
 render();

@@ -58,3 +58,10 @@ form {
     text-decoration: line-through; 
     opacity: 0.6; 
 }
+
+#clearDone { 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    cursor: pointer; 
+}
