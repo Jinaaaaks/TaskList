@@ -11,31 +11,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <header>
+    <header>
         <div class="container">
-          <h1>TaskList</h1>
+            <h1>TaskList</h1>
         </div>
-     </header>
+    </header>
 
-     <main class="container">
-      <section id="controls">
-        <input id="searchInput" type="text" placeholder="Search tasks">
-        <select id="statusFilter">
-          <option value="all">All</option>
-          <option value="open">Open</option>
-          <option value="done">Done</option>
-        </select>
-        <button id="clearDone" type="button">Clear done</button>
-      </section>
+    <main class="container">
+        <section id="controls">
+            <input id="searchInput" type="text" placeholder="Search tasks">
+            <select id="statusFilter">
+                <option value="all">All</option>
+                <option value="open">Open</option>
+                <option value="done">Done</option>
+            </select>
+            <button id="clearDone" type="button">Clear done</button>
+        </section>
 
-      <form id="taskForm">
-        <input id="taskInput" type="text" placeholder="Add a task" required autofocus>
-        <button type="submit">Add</button>
-      </form>
+        <form id="taskForm">
+            <input id="taskInput" type="text" placeholder="Add a task" required autofocus>
+            <button type="submit">Add</button>
+        </form>
 
-      <ul id="taskList"></ul>
+        <ul id="taskList"></ul>
     </main>
-
     <script src="app.js"></script>
 </body>
 </html>
