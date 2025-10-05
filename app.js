@@ -18,9 +18,21 @@ try {
 const search = document.getElementById("searchInput");
 let query = "";
 
+const statusSel = document.getElementById("statusFilter");
+let filterStatus = "all";
+
 
 function render() {
-    const filtered = tasks.filter(t => t.title.toLowerCase().includes(query));
+    const filtered = tasks.filter(t => {
+        const matchText = t.title.toLowerCase().includes(query);
+        const matchStatus = filterStatus === "all" 
+        ? true 
+        : filterStatus === "done" 
+            ? t.done 
+            : !t.done;
+        return matchText && matchStatus;
+    });
+
     list.innerHTML = tasks.map(t => `
         <li data-id="${t.id}" class="${t.done ? "done" : ""}">
         <input type="checkbox" ${t.done ? "checked" : ""}>
@@ -32,6 +44,13 @@ function render() {
 
 function save() {
     localStorage.setItem(KEY, JSON.stringify(tasks));
+}
+
+if (statusSel) {
+  statusSel.addEventListener("change", e => {
+    filterStatus = e.target.value;
+    render();
+  });
 }
 
 
