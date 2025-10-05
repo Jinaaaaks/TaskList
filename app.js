@@ -52,11 +52,13 @@ if (list) {
     if (e.target.matches("input[type=checkbox]")) {
       const t = tasks.find(t => t.id === id);
       t.done = e.target.checked;
+      save();
       render();
     }
 
     if (e.target.matches(".delete")) {
       tasks = tasks.filter(t => t.id !== id);
+      save();
       render();
     }
   });
