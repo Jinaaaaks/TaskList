@@ -44,7 +44,7 @@ form {
     max-width: 560px; 
     margin: 0 auto 1rem; 
     display: grid; 
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr auto auto; 
     gap: 8px; 
 }
 
